@@ -47,17 +47,17 @@ _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
-CHANNEL="beta"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
-_create_yandex_appimage
-cd ..
-mv ./"$CHANNEL"/*.AppImage* ./
+#CHANNEL="beta"
+#mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || #exit 1
+#_create_yandex_appimage
+#cd ..
+#mv ./"$CHANNEL"/*.AppImage* ./
 
-CHANNEL="corporate"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
-_create_yandex_appimage
-cd ..
-mv ./"$CHANNEL"/*.AppImage* ./
+#CHANNEL="corporate"
+#mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || #exit 1
+#_create_yandex_appimage
+#cd ..
+#mv ./"$CHANNEL"/*.AppImage* ./
 
 cd ..
 mv ./tmp/*.AppImage* ./
