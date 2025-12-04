@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 APP=yandex-browser
 
 # TEMPORARY DIRECTORY
@@ -42,24 +41,23 @@ _create_yandex_appimage(){
 wget --recursive --tries=10 --no-parent "index.html*" https://repo.yandex.ru/yandex-browser/deb/pool/main/y/
 mv ./repo.yandex.ru/yandex-browser/deb/pool/main/y/*/*deb . || exit 1
 
-#CHANNEL="stable"
-#mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
-#_create_yandex_appimage
-#cd ..
-#mv ./"$CHANNEL"/*.AppImage* ./
+CHANNEL="stable"
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
+_create_yandex_appimage
+cd ..
+mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="beta"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || #exit 1
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="corporate"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || #exit 1
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
 cd ..
 mv ./tmp/*.AppImage* ./
-
