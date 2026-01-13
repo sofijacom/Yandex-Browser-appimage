@@ -15,6 +15,13 @@ fi
 # CREATE CHROME BROWSER APPIMAGES
 
 _create_yandex_appimage(){
+	DEB=$(curl -Ls "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/" | tr '">< ' '\n' | grep ".*amd64.deb" | tail -1)
+	wait
+	if wget --version | head -1 | grep -q ' 1.'; then
+		wget -q --no-verbose --show-progress --progress=bar "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
+	else
+		wget "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
+	fi
 	ar x ./*.deb
 	tar xf ./data.tar.xz
 	mkdir "$APP".AppDir
