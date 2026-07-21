@@ -2,7 +2,7 @@
 # GitHub Linguist configuration
 # Force the file named "template" or ".template" to be treated as Bash
 # ---------------------------------------------------------
-yandex-builder.sh linguist-language=sh
+yandex-builder.sh linguist-language=bash
 
 # ---------------------------------------------------------
 # Whitespace rules for diff/patch files
