@@ -3,6 +3,8 @@
 # Force the file named "template" or ".template" to be treated as Bash
 # ---------------------------------------------------------
 yandex-builder.sh linguist-language=bash
+CI.yml linguist-language=bash
+cronjob.yml linguist-language=bash
 
 # ---------------------------------------------------------
 # Whitespace rules for diff/patch files
